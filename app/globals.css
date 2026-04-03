@@ -355,6 +355,56 @@ img {
   font-size: 0.92rem;
 }
 
+.proof-strip {
+  padding-top: 2rem;
+}
+
+.proof-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
+  gap: 1.6rem;
+  margin-top: 2rem;
+  padding: 1.6rem;
+  border: 1px solid rgba(56, 69, 57, 0.12);
+  border-radius: 1.8rem;
+  background: rgba(255, 252, 246, 0.62);
+  box-shadow: var(--shadow);
+}
+
+.proof-copy {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.proof-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-list li {
+  padding: 1rem 0 1rem 1.2rem;
+  border-left: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.proof-note {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.proof-shot img {
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
 .support-offers {
   position: relative;
 }
@@ -411,6 +461,7 @@ img {
   .before-after,
   .benefits-list,
   .demo-gallery,
+  .proof-panel,
   .offer-grid,
   .faq-list {
     grid-template-columns: 1fr;

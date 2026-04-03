@@ -1,30 +1,30 @@
 const workflowSteps = [
   {
-    title: "Speak the job",
-    body: "Capture the job details while you are on-site instead of saving everything for later."
+    title: "Enter the basics",
+    body: "Start with the customer name, email, and job address so the send package is ready from the beginning."
   },
   {
-    title: "Review the draft",
-    body: "Get a professional proposal and matching email draft you can check before anything goes out."
+    title: "Describe the work",
+    body: "Speak the scope from the field or type it in, then let the app turn rough notes into a customer-ready proposal."
   },
   {
-    title: "Send faster",
-    body: "Keep momentum with a cleaner delivery and faster follow-up while the lead is still warm."
+    title: "Review and send",
+    body: "Check the finished proposal and matching email before anything goes out, then send it while the lead is still warm."
   }
 ];
 
 const benefits = [
   "Send proposals faster",
+  "Review the proposal before it is sent",
+  "Send a matching customer email without extra rewriting",
   "Look more professional to customers",
-  "Spend less time typing and rewriting",
-  "Miss fewer follow-ups",
   "Create a repeatable quoting workflow"
 ];
 
 const offers = [
   {
     name: "AI Contractor System",
-    promise: "Send proposals faster without typing."
+    promise: "Capture the job, review the send package, and move to the next customer faster."
   },
   {
     name: "Contractor Lead-Capture Website",
@@ -37,15 +37,14 @@ const offers = [
   {
     name: "Voice Agent Add-On",
     promise: "Add optional intake, routing, and FAQ support later."
-  },
-  {
-    name: "B2B Outbound Lead Gen System",
-    promise: "Reach local commercial targets with a simple outbound system."
-  },
-  {
-    name: "AI Audit",
-    promise: "Get a paid strategy-first review before a larger buildout."
   }
+];
+
+const proofPoints = [
+  "Customer details captured",
+  "Proposal created",
+  "Email sent",
+  "File saved"
 ];
 
 const faq = [
@@ -69,24 +68,24 @@ const faq = [
 
 const screenshots = [
   {
-    src: "/marketing-assets/product-initial.png",
-    label: "Open the app and start the job"
-  },
-  {
-    src: "/marketing-assets/product-customer-info.png",
+    src: "/marketing-assets/product-customer-details.png",
     label: "Add customer details in seconds"
   },
   {
-    src: "/marketing-assets/product-voice-input.png",
-    label: "Capture the work details from the field"
+    src: "/marketing-assets/product-scope-voice.png",
+    label: "Speak the job from the field"
   },
   {
-    src: "/marketing-assets/product-proposal-draft.png",
-    label: "Review the finished proposal draft"
+    src: "/marketing-assets/product-proposal-review.png",
+    label: "Review the finished proposal"
   },
   {
-    src: "/marketing-assets/product-email-draft.png",
-    label: "Check the email before it goes out"
+    src: "/marketing-assets/product-final-send-check.png",
+    label: "Check the send package before it goes out"
+  },
+  {
+    src: "/marketing-assets/product-success-complete.png",
+    label: "Send it and move to the next customer"
   }
 ];
 
@@ -103,9 +102,10 @@ export default function Home() {
         </div>
         <nav className="topnav" aria-label="Primary">
           <a href="#how-it-works">How It Works</a>
+          <a href="#proof">Proof</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a className="button button-dark" href="mailto:davesousa322@gmail.com?subject=AI%20Contractor%20System%20Demo">
+          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=AI%20Contractor%20System%20Demo">
             Book Demo
           </a>
         </nav>
@@ -116,26 +116,26 @@ export default function Home() {
           <p className="eyebrow">Flagship offer for small contractor teams</p>
           <h1>Send proposals 10x faster without typing.</h1>
           <p className="hero-text">
-            Speak job details into your phone, get a professional proposal drafted fast, and follow up before the job goes cold.
+            Enter the customer basics, speak the work from the field, review the proposal and matching email, and send it before the job goes cold.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="mailto:davesousa322@gmail.com?subject=Book%20AI%20Contractor%20System%20Demo">
+            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20AI%20Contractor%20System%20Demo">
               Book Demo
             </a>
             <a className="button button-light" href="#demo-strip">
-              Watch Quick Demo
+              See Workflow
             </a>
           </div>
-          <p className="trust-line">Built for contractors who want a simpler workflow, not more software to manage.</p>
+          <p className="trust-line">Built for contractors who want a simpler workflow, not more software to manage or more admin to chase.</p>
         </div>
 
         <div className="hero-visual">
           <div className="phone-stage">
             <div className="phone-frame phone-frame-front">
-              <img src="/marketing-assets/product-proposal-draft.png" alt="Proposal draft screen from the AI Contractor System" />
+              <img src="/marketing-assets/product-proposal-review.png" alt="Proposal review screen from the AI Contractor System" />
             </div>
             <div className="phone-frame phone-frame-back">
-              <img src="/marketing-assets/product-customer-info.png" alt="Customer info screen from the AI Contractor System" />
+              <img src="/marketing-assets/product-customer-details.png" alt="Customer details screen from the AI Contractor System" />
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
           <p className="eyebrow">How it works</p>
           <h2>Simple workflow. No complicated software.</h2>
           <p>
-            The goal is not more software. The goal is getting quotes out faster while the customer still remembers the conversation.
+            The goal is not more software. The goal is getting the send package ready while the customer still remembers the conversation.
           </p>
         </div>
         <div className="workflow-list">
@@ -172,8 +172,8 @@ export default function Home() {
         </div>
         <div>
           <p className="eyebrow">After</p>
-          <h3>Fast draft, clean delivery, quicker follow-up</h3>
-          <p>Capture the job once, review the draft, and send a more professional proposal while the job is still active.</p>
+          <h3>Customer basics, clean review, faster send</h3>
+          <p>Capture the customer once, review the finished proposal and email, and send a more professional package while the job is still active.</p>
         </div>
       </section>
 
@@ -202,7 +202,7 @@ export default function Home() {
       <section className="section demo-strip" id="demo-strip">
         <div className="section-intro narrow">
           <p className="eyebrow">Quick demo</p>
-          <h2>See the voice-to-proposal flow in real screens.</h2>
+          <h2>See the full voice-to-proposal flow in real screens.</h2>
         </div>
         <div className="demo-gallery">
           {screenshots.map((shot) => (
@@ -214,11 +214,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section proof-strip" id="proof">
+        <div className="section-intro">
+          <p className="eyebrow">Proof</p>
+          <h2>It does not stop at draft generation.</h2>
+          <p>
+            The workflow ends in a completed next step: the proposal is created, the file is saved, the email is sent, and the job keeps moving.
+          </p>
+        </div>
+        <div className="proof-panel">
+          <div className="proof-copy">
+            <ul className="proof-list">
+              {proofPoints.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="proof-note">
+              Review-before-send is part of the product. Contractors can check the proposal and outgoing email before anything goes out.
+            </p>
+          </div>
+          <div className="proof-shot">
+            <img src="/marketing-assets/product-success-complete.png" alt="Completed send state showing proposal created, file saved, email sent, and next step complete" />
+          </div>
+        </div>
+      </section>
+
       <section className="section support-offers">
         <div className="section-intro">
           <p className="eyebrow">Ways to work together</p>
-          <h2>Start with the system you need now, then add support later.</h2>
-          <p>The flagship stays first. The supporting services are there when the workflow is ready for them.</p>
+          <h2>Start with the quoting workflow, then add support later.</h2>
+          <p>The flagship stays first. The supporting services stay secondary until the workflow is in place.</p>
         </div>
         <div className="offer-grid">
           {offers.map((offer, index) => (
@@ -235,7 +260,7 @@ export default function Home() {
           <p className="eyebrow">Pricing and walkthrough</p>
           <h2>Book a custom walkthrough and get pricing based on your workflow.</h2>
           <p>This is positioned as a practical implementation, not a bloated software package.</p>
-          <a className="button button-dark" href="mailto:davesousa322@gmail.com?subject=Pricing%20Request%20for%20AI%20Contractor%20System">
+          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Pricing%20Request%20for%20AI%20Contractor%20System">
             Request Pricing
           </a>
         </div>
@@ -258,9 +283,9 @@ export default function Home() {
 
       <section className="section final-cta">
         <p className="eyebrow">Final call</p>
-        <h2>If you can speak the job, you can send the proposal faster.</h2>
+        <h2>If you can explain the job, you can review and send the proposal faster.</h2>
         <div className="hero-actions">
-          <a className="button button-dark" href="mailto:davesousa322@gmail.com?subject=Book%20Demo%20for%20AI%20Contractor%20System">
+          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
             Book Demo
           </a>
           <a className="button button-light" href="#demo-strip">
