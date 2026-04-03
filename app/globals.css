@@ -189,7 +189,7 @@ img {
 
 .hero-visual {
   position: relative;
-  min-height: 880px;
+  min-height: 620px;
 }
 
 .phone-stage {
@@ -213,22 +213,31 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  will-change: transform;
 }
 
 .phone-frame-front {
   right: 2rem;
-  width: min(325px, 68vw);
-  height: 835px;
+  width: min(360px, 72vw);
+  height: 600px;
   transform: rotate(6deg);
 }
 
 .phone-frame-back {
   left: 0;
-  bottom: 1.5rem;
-  width: min(270px, 56vw);
-  height: 700px;
+  bottom: 2.5rem;
+  width: min(300px, 60vw);
+  height: 510px;
   transform: rotate(-8deg);
-  opacity: 0.9;
+  opacity: 0.92;
+}
+
+.phone-frame-front img {
+  animation: hero-pan-front 16s ease-in-out infinite alternate;
+}
+
+.phone-frame-back img {
+  animation: hero-pan-back 18s ease-in-out infinite alternate;
 }
 
 .pain-strip {
@@ -490,7 +499,7 @@ img {
   }
 
   .hero-visual {
-    min-height: 760px;
+    min-height: 540px;
   }
 
   .phone-frame-front {
@@ -513,21 +522,48 @@ img {
   }
 
   .hero-visual {
-    min-height: 620px;
+    min-height: 420px;
   }
 
   .phone-frame-front {
-    width: 220px;
-    height: 560px;
+    width: 240px;
+    height: 400px;
   }
 
   .phone-frame-back {
     bottom: 0;
-    width: 180px;
-    height: 460px;
+    width: 200px;
+    height: 340px;
   }
 
   .section {
     padding: 4rem 0;
+  }
+}
+
+@keyframes hero-pan-front {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes hero-pan-back {
+  0% {
+    transform: translateY(-2%);
+  }
+
+  100% {
+    transform: translateY(-12%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-frame-front img,
+  .phone-frame-back img {
+    animation: none;
   }
 }
