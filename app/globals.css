@@ -1,15 +1,15 @@
 :root {
-  --bg: #f3ede3;
-  --bg-strong: #e4d7bf;
-  --surface: rgba(255, 252, 246, 0.72);
-  --surface-strong: #f9f4ea;
-  --ink: #1e1a17;
-  --muted: #63584e;
-  --line: rgba(30, 26, 23, 0.14);
-  --accent: #ba5a2a;
-  --accent-soft: #d9854f;
-  --olive: #384539;
-  --shadow: 0 24px 60px rgba(54, 38, 22, 0.12);
+  --bg: #f4efe7;
+  --bg-strong: #e8dece;
+  --surface: rgba(255, 251, 245, 0.78);
+  --surface-strong: #fbf7f1;
+  --ink: #211d19;
+  --muted: #655d54;
+  --line: rgba(33, 29, 25, 0.12);
+  --accent: #9f6540;
+  --accent-soft: #c79368;
+  --olive: #355845;
+  --shadow: 0 24px 60px rgba(43, 35, 28, 0.11);
 }
 
 * {
@@ -23,9 +23,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(217, 167, 122, 0.35), transparent 30%),
-    radial-gradient(circle at top right, rgba(73, 104, 76, 0.16), transparent 24%),
-    linear-gradient(180deg, #f6f0e6 0%, #f1e9dc 48%, #f7f4ee 100%);
+    radial-gradient(circle at top left, rgba(199, 147, 104, 0.26), transparent 32%),
+    radial-gradient(circle at top right, rgba(53, 88, 69, 0.14), transparent 26%),
+    linear-gradient(180deg, #f7f2ea 0%, #f2ebe1 50%, #faf7f2 100%);
   color: var(--ink);
   font-family: var(--font-sans), sans-serif;
 }
@@ -136,7 +136,7 @@ img {
 
 .button-light {
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.58);
 }
 
 .hero {
@@ -189,7 +189,7 @@ img {
 
 .hero-visual {
   position: relative;
-  min-height: 620px;
+  min-height: 880px;
 }
 
 .phone-stage {
@@ -212,22 +212,23 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 }
 
 .phone-frame-front {
   right: 2rem;
-  width: min(360px, 72vw);
-  height: 600px;
+  width: min(325px, 68vw);
+  height: 835px;
   transform: rotate(6deg);
 }
 
 .phone-frame-back {
   left: 0;
-  bottom: 2.5rem;
-  width: min(300px, 60vw);
-  height: 510px;
+  bottom: 1.5rem;
+  width: min(270px, 56vw);
+  height: 700px;
   transform: rotate(-8deg);
-  opacity: 0.92;
+  opacity: 0.9;
 }
 
 .pain-strip {
@@ -342,10 +343,11 @@ img {
 }
 
 .demo-gallery img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 39 / 100;
   width: 100%;
   border-radius: 1.4rem;
   object-fit: cover;
+  object-position: top center;
   box-shadow: var(--shadow);
 }
 
@@ -365,9 +367,9 @@ img {
   gap: 1.6rem;
   margin-top: 2rem;
   padding: 1.6rem;
-  border: 1px solid rgba(56, 69, 57, 0.12);
+  border: 1px solid rgba(53, 88, 69, 0.12);
   border-radius: 1.8rem;
-  background: rgba(255, 252, 246, 0.62);
+  background: rgba(255, 251, 245, 0.7);
   box-shadow: var(--shadow);
 }
 
@@ -421,10 +423,10 @@ img {
 }
 
 .offer-item-featured {
-  background: rgba(255, 252, 246, 0.56);
+  background: rgba(255, 251, 245, 0.64);
   border-radius: 1.4rem;
   padding: 1.5rem;
-  border: 1px solid rgba(186, 90, 42, 0.18);
+  border: 1px solid rgba(159, 101, 64, 0.18);
 }
 
 .pricing {
@@ -488,7 +490,7 @@ img {
   }
 
   .hero-visual {
-    min-height: 540px;
+    min-height: 760px;
   }
 
   .phone-frame-front {
@@ -511,18 +513,18 @@ img {
   }
 
   .hero-visual {
-    min-height: 420px;
+    min-height: 620px;
   }
 
   .phone-frame-front {
-    width: 240px;
-    height: 400px;
+    width: 220px;
+    height: 560px;
   }
 
   .phone-frame-back {
     bottom: 0;
-    width: 200px;
-    height: 340px;
+    width: 180px;
+    height: 460px;
   }
 
   .section {

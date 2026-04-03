@@ -1,6 +1,6 @@
 const workflowSteps = [
   {
-    title: "Enter the basics",
+    title: "Enter customer details",
     body: "Start with the customer name, email, and job address so the send package is ready from the beginning."
   },
   {
@@ -69,11 +69,11 @@ const faq = [
 const screenshots = [
   {
     src: "/marketing-assets/product-customer-details.png",
-    label: "Add customer details in seconds"
+    label: "Enter the customer name, email, and address"
   },
   {
     src: "/marketing-assets/product-scope-voice.png",
-    label: "Speak the job from the field"
+    label: "Describe the work the way you already talk about it"
   },
   {
     src: "/marketing-assets/product-proposal-review.png",
@@ -116,7 +116,7 @@ export default function Home() {
           <p className="eyebrow">Flagship offer for small contractor teams</p>
           <h1>Send proposals 10x faster without typing.</h1>
           <p className="hero-text">
-            Enter the customer basics, speak the work from the field, review the proposal and matching email, and send it before the job goes cold.
+            Enter the customer name and email, speak the work from the field, review the proposal and matching email, and send it before the job goes cold.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20AI%20Contractor%20System%20Demo">

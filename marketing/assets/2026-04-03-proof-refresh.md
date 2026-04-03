@@ -12,12 +12,7 @@ Runtime used:
   - Drive connected
   - Gmail connected
 
-## Captured Assets
-
-### `product-home-create-proposal.png`
-- screen: app home
-- purpose: optional secondary proof of mobile-first simplicity
-- website use: optional supporting asset, not currently the main hero visual
+## Retained Assets
 
 ### `product-customer-details.png`
 - screen: customer details step
@@ -44,11 +39,6 @@ Runtime used:
 - purpose: strongest proof that the workflow ends in a real next step
 - website use: demo strip final image, proof section main screenshot
 
-### `product-settings-ready.png`
-- screen: settings / runtime readiness
-- purpose: secondary technical proof that the local app is fully connected
-- website use: optional future credibility block, not currently used on the homepage
-
 ## Site Updates Tied To This Refresh
 
 - hero now uses:
@@ -63,6 +53,12 @@ Runtime used:
 - proof section now uses:
   - `product-success-complete.png`
 - workflow copy was tightened to match the real app:
-  - enter the basics
+  - enter customer details
   - describe the work
   - review and send
+
+## Retired From Public Asset Folder
+
+- `product-home-create-proposal.png`
+- `product-settings-ready.png`
+- older first-pass intermediates that are no longer referenced by the site
