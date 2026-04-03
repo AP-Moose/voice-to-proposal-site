@@ -69,23 +69,28 @@ const faq = [
 const screenshots = [
   {
     src: "/marketing-assets/product-customer-details.png",
-    label: "Enter the customer name, email, and address"
+    label: "Enter the customer name, email, and address",
+    position: "top center"
   },
   {
     src: "/marketing-assets/product-scope-voice.png",
-    label: "Describe the work the way you already talk about it"
+    label: "Describe the work the way you already talk about it",
+    position: "top center"
   },
   {
     src: "/marketing-assets/product-proposal-review.png",
-    label: "Review the finished proposal"
+    label: "Review the finished proposal",
+    position: "center top"
   },
   {
     src: "/marketing-assets/product-final-send-check.png",
-    label: "Check the send package before it goes out"
+    label: "Check the send package before it goes out",
+    position: "top center"
   },
   {
     src: "/marketing-assets/product-success-complete.png",
-    label: "Send it and move to the next customer"
+    label: "Send it and move to the next customer",
+    position: "top center"
   }
 ];
 
@@ -204,13 +209,33 @@ export default function Home() {
           <p className="eyebrow">Quick demo</p>
           <h2>See the full voice-to-proposal flow in real screens.</h2>
         </div>
+        <div className="demo-hint" aria-label="Swipe hint">
+          <span className="demo-hint-chip">Swipe anywhere on the screens to follow the workflow</span>
+        </div>
         <div className="demo-gallery">
           {screenshots.map((shot) => (
             <figure key={shot.label}>
-              <img src={shot.src} alt={shot.label} />
+              <img src={shot.src} alt={shot.label} style={{ objectPosition: shot.position }} />
               <figcaption>{shot.label}</figcaption>
             </figure>
           ))}
+        </div>
+        <div className="demo-cta">
+          <div>
+            <p className="eyebrow">See your version</p>
+            <h3>Want this mapped to your own quoting workflow?</h3>
+            <p>
+              Book a walkthrough and see how the same flow would look with your jobs, your proposal style, and your follow-up process.
+            </p>
+          </div>
+          <div className="hero-actions">
+            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
+              Book Demo
+            </a>
+            <a className="button button-light" href="mailto:dave@prolynk.io?subject=Send%20Me%20More%20Details%20on%20AI%20Contractor%20System">
+              Email Questions
+            </a>
+          </div>
         </div>
       </section>
 
@@ -232,6 +257,9 @@ export default function Home() {
             <p className="proof-note">
               Review-before-send is part of the product. Contractors can check the proposal and outgoing email before anything goes out.
             </p>
+            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Show%20Me%20The%20Workflow%20Live">
+              See It Live
+            </a>
           </div>
           <div className="proof-shot">
             <img src="/marketing-assets/product-success-complete.png" alt="Completed send state showing proposal created, file saved, email sent, and next step complete" />
