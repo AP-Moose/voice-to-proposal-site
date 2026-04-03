@@ -349,15 +349,20 @@ img {
 
 .demo-gallery figure {
   margin: 0;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  background: rgba(255, 251, 245, 0.72);
+  border: 1px solid rgba(33, 29, 25, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .demo-gallery img {
   aspect-ratio: 39 / 100;
   width: 100%;
-  border-radius: 1.4rem;
-  object-fit: cover;
+  border-radius: 1.2rem;
+  background: #f7f5f1;
+  object-fit: contain;
   object-position: top center;
-  box-shadow: var(--shadow);
 }
 
 .demo-gallery figcaption {
@@ -523,6 +528,20 @@ img {
 
   .hero-visual {
     min-height: 420px;
+  }
+
+  .demo-gallery {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(74vw, 74vw);
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .demo-gallery figure {
+    scroll-snap-align: start;
   }
 
   .phone-frame-front {
