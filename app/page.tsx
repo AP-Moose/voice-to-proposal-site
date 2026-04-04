@@ -124,7 +124,7 @@ export default function Home() {
               <img src="/marketing-assets/product-proposal-review.png" alt="Proposal review screen from the AI Contractor System" />
             </div>
             <div className="phone-frame phone-frame-back">
-              <img src="/marketing-assets/product-customer-details.png" alt="Customer details screen from the AI Contractor System" />
+              <img src="/marketing-assets/product-scope-voice.png" alt="Voice capture screen from the AI Contractor System" />
             </div>
           </div>
         </div>
@@ -169,9 +169,6 @@ export default function Home() {
           <h2>Real screens. Real flow.</h2>
         </div>
         <div className="demo-rail-header">
-          <div className="demo-hint">
-            <span className="demo-hint-chip">Swipe the screens</span>
-          </div>
           <p className="demo-count">5 steps</p>
         </div>
         <div className="demo-scroller" aria-label="Voice-to-proposal screen walkthrough">
