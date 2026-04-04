@@ -1,24 +1,23 @@
 const workflowSteps = [
   {
     title: "Enter customer details",
-    body: "Start with the customer name, email, and job address so the send package is ready from the beginning."
+    body: "Add the name, email, and address first."
   },
   {
     title: "Describe the work",
-    body: "Speak the scope from the field or type it in, then let the app turn rough notes into a customer-ready proposal."
+    body: "Speak the job or type quick notes."
   },
   {
     title: "Review and send",
-    body: "Check the finished proposal and matching email before anything goes out, then send it while the lead is still warm."
+    body: "Check the proposal and email, then send."
   }
 ];
 
 const benefits = [
-  "Send proposals faster",
-  "Review the proposal before it is sent",
-  "Send a matching customer email without extra rewriting",
-  "Look more professional to customers",
-  "Create a repeatable quoting workflow"
+  "Send quotes faster",
+  "Review before you send",
+  "Send the proposal and email together",
+  "Look more professional"
 ];
 
 const offers = [
@@ -41,7 +40,7 @@ const offers = [
 ];
 
 const proofPoints = [
-  "Customer details captured",
+  "Customer entered",
   "Proposal created",
   "Email sent",
   "File saved"
@@ -50,19 +49,19 @@ const proofPoints = [
 const faq = [
   {
     question: "Do I need to be tech-savvy?",
-    answer: "No. The workflow is built around speaking the job and reviewing the draft before you send it."
+    answer: "No. You speak the job, review it, and send."
   },
   {
     question: "Does this replace my current process?",
-    answer: "Not all at once. It is meant to simplify quoting and follow-up without forcing a heavy software change."
+    answer: "No. It gives you a faster way to build and send proposals."
   },
   {
     question: "Can I review everything before it is sent?",
-    answer: "Yes. The proposal and email are drafted for review first."
+    answer: "Yes. The proposal and email are both shown before anything goes out."
   },
   {
     question: "Is this only for bigger teams?",
-    answer: "No. The core audience is owner-operators, estimators, and small contractor teams."
+    answer: "No. It is built for owner-operators and small teams."
   }
 ];
 
@@ -118,10 +117,10 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Flagship offer for small contractor teams</p>
+          <p className="eyebrow">For busy contractor teams</p>
           <h1>Send proposals 10x faster without typing.</h1>
           <p className="hero-text">
-            Enter the customer name and email, speak the work from the field, review the proposal and matching email, and send it before the job goes cold.
+            Add the customer. Speak the job. Review it. Send it.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20AI%20Contractor%20System%20Demo">
@@ -131,7 +130,7 @@ export default function Home() {
               See Workflow
             </a>
           </div>
-          <p className="trust-line">Built for contractors who want a simpler workflow, not more software to manage or more admin to chase.</p>
+          <p className="trust-line">Built for contractors who want faster quotes, not more software.</p>
         </div>
 
         <div className="hero-visual">
@@ -153,10 +152,8 @@ export default function Home() {
       <section className="section section-grid" id="how-it-works">
         <div className="section-intro">
           <p className="eyebrow">How it works</p>
-          <h2>Simple workflow. No complicated software.</h2>
-          <p>
-            The goal is not more software. The goal is getting the send package ready while the customer still remembers the conversation.
-          </p>
+          <h2>Name. Job. Review. Send.</h2>
+          <p>The proposal gets ready while the job is still fresh.</p>
         </div>
         <div className="workflow-list">
           {workflowSteps.map((step, index) => (
@@ -169,23 +166,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section before-after">
-        <div>
-          <p className="eyebrow">Before</p>
-          <h3>Voice notes, memory, and late-night typing</h3>
-          <p>Job details get scattered across calls, notes, and texts. Proposals wait until the end of the day.</p>
-        </div>
-        <div>
-          <p className="eyebrow">After</p>
-          <h3>Customer basics, clean review, faster send</h3>
-          <p>Capture the customer once, review the finished proposal and email, and send a more professional package while the job is still active.</p>
-        </div>
-      </section>
-
       <section className="section section-grid">
         <div className="section-intro narrow">
-          <p className="eyebrow">What this helps you do</p>
-          <h2>More speed. Less admin drag.</h2>
+          <p className="eyebrow">Why it helps</p>
+          <h2>Faster quotes. Less chasing.</h2>
         </div>
         <ul className="benefits-list">
           {benefits.map((benefit) => (
@@ -197,17 +181,15 @@ export default function Home() {
       <section className="section audience">
         <div className="section-intro narrow">
           <p className="eyebrow">Who it&apos;s for</p>
-          <h2>Built for contractors who are busy, not techy.</h2>
-          <p>
-            Owner-operators, small teams, and busy estimators who need a practical quoting workflow that feels obvious on mobile.
-          </p>
+          <h2>Built for owner-operators and small teams.</h2>
+          <p>If you sell jobs, walk sites, and still need to send proposals fast, this is for you.</p>
         </div>
       </section>
 
       <section className="section demo-strip" id="demo-strip">
         <div className="section-intro narrow">
           <p className="eyebrow">Quick demo</p>
-          <h2>See the full voice-to-proposal flow in real screens.</h2>
+          <h2>Real screens. Real flow.</h2>
         </div>
         <div className="demo-hint" aria-label="Swipe hint">
           <span className="demo-hint-chip">Swipe anywhere on the screens to follow the workflow</span>
@@ -223,10 +205,8 @@ export default function Home() {
         <div className="demo-cta">
           <div>
             <p className="eyebrow">See your version</p>
-            <h3>Want this mapped to your own quoting workflow?</h3>
-            <p>
-              Book a walkthrough and see how the same flow would look with your jobs, your proposal style, and your follow-up process.
-            </p>
+            <h3>Want this set up for your workflow?</h3>
+            <p>Book a walkthrough and see how it would work for your jobs and your proposal style.</p>
           </div>
           <div className="hero-actions">
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
@@ -242,10 +222,8 @@ export default function Home() {
       <section className="section proof-strip" id="proof">
         <div className="section-intro">
           <p className="eyebrow">Proof</p>
-          <h2>It does not stop at draft generation.</h2>
-          <p>
-            The workflow ends in a completed next step: the proposal is created, the file is saved, the email is sent, and the job keeps moving.
-          </p>
+          <h2>It ends with a sent proposal.</h2>
+          <p>The proposal is created, saved, and sent.</p>
         </div>
         <div className="proof-panel">
           <div className="proof-copy">
@@ -255,7 +233,7 @@ export default function Home() {
               ))}
             </ul>
             <p className="proof-note">
-              Review-before-send is part of the product. Contractors can check the proposal and outgoing email before anything goes out.
+              You see the proposal and the email before anything goes out.
             </p>
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Show%20Me%20The%20Workflow%20Live">
               See It Live
@@ -270,8 +248,8 @@ export default function Home() {
       <section className="section support-offers">
         <div className="section-intro">
           <p className="eyebrow">Ways to work together</p>
-          <h2>Start with the quoting workflow, then add support later.</h2>
-          <p>The flagship stays first. The supporting services stay secondary until the workflow is in place.</p>
+          <h2>Start here. Add support later.</h2>
+          <p>The quoting workflow comes first. The other offers come after.</p>
         </div>
         <div className="offer-grid">
           {offers.map((offer, index) => (
@@ -286,8 +264,8 @@ export default function Home() {
       <section className="section pricing" id="pricing">
         <div className="section-intro narrow">
           <p className="eyebrow">Pricing and walkthrough</p>
-          <h2>Book a custom walkthrough and get pricing based on your workflow.</h2>
-          <p>This is positioned as a practical implementation, not a bloated software package.</p>
+          <h2>Book a walkthrough. Get pricing.</h2>
+          <p>This is a practical setup, not a bloated software package.</p>
           <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Pricing%20Request%20for%20AI%20Contractor%20System">
             Request Pricing
           </a>
@@ -311,7 +289,7 @@ export default function Home() {
 
       <section className="section final-cta">
         <p className="eyebrow">Final call</p>
-        <h2>If you can explain the job, you can review and send the proposal faster.</h2>
+        <h2>If you can explain the job, you can send the proposal faster.</h2>
         <div className="hero-actions">
           <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
             Book Demo

@@ -6,8 +6,8 @@
   --ink: #211d19;
   --muted: #655d54;
   --line: rgba(33, 29, 25, 0.12);
-  --accent: #9f6540;
-  --accent-soft: #c79368;
+  --accent: #567160;
+  --accent-soft: #7f9889;
   --olive: #355845;
   --shadow: 0 24px 60px rgba(43, 35, 28, 0.11);
 }
@@ -23,9 +23,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(199, 147, 104, 0.26), transparent 32%),
-    radial-gradient(circle at top right, rgba(53, 88, 69, 0.14), transparent 26%),
-    linear-gradient(180deg, #f7f2ea 0%, #f2ebe1 50%, #faf7f2 100%);
+    radial-gradient(circle at top left, rgba(127, 152, 137, 0.16), transparent 32%),
+    radial-gradient(circle at top right, rgba(53, 88, 69, 0.12), transparent 26%),
+    linear-gradient(180deg, #f7f3ec 0%, #f2ece4 50%, #faf7f2 100%);
   color: var(--ink);
   font-family: var(--font-sans), sans-serif;
 }
@@ -345,6 +345,8 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
   margin-top: 2rem;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
 }
 
 .demo-hint {
@@ -584,6 +586,7 @@ img {
     gap: 0.9rem;
     padding: 0.15rem 5vw 0.75rem 0;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -632,6 +635,10 @@ img {
   .section {
     padding: 4rem 0;
   }
+}
+
+.demo-gallery::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes hero-pan-front {
