@@ -1,42 +1,22 @@
 const workflowSteps = [
   {
-    title: "Enter customer details",
-    body: "Add the name, email, and address first."
+    title: "Add the customer",
+    body: "Name, email, address."
   },
   {
-    title: "Describe the work",
-    body: "Speak the job or type quick notes."
+    title: "Say the job",
+    body: "Speak it or type quick notes."
   },
   {
     title: "Review and send",
-    body: "Check the proposal and email, then send."
+    body: "Check it, then send it."
   }
 ];
 
 const benefits = [
   "Send quotes faster",
   "Review before you send",
-  "Send the proposal and email together",
-  "Look more professional"
-];
-
-const offers = [
-  {
-    name: "AI Contractor System",
-    promise: "Capture the job, review the send package, and move to the next customer faster."
-  },
-  {
-    name: "Contractor Lead-Capture Website",
-    promise: "Turn visitors into calls and estimate requests."
-  },
-  {
-    name: "Contractor Follow-Up CRM",
-    promise: "Keep every lead attached to a next step."
-  },
-  {
-    name: "Voice Agent Add-On",
-    promise: "Add optional intake, routing, and FAQ support later."
-  }
+  "Less typing"
 ];
 
 const proofPoints = [
@@ -68,27 +48,32 @@ const faq = [
 const screenshots = [
   {
     src: "/marketing-assets/product-customer-details.png",
-    label: "Enter the customer name, email, and address",
+    label: "Add the customer",
+    detail: "Name, email, address.",
     position: "top center"
   },
   {
     src: "/marketing-assets/product-scope-voice.png",
-    label: "Describe the work the way you already talk about it",
+    label: "Say the job",
+    detail: "Speak it or type it.",
     position: "top center"
   },
   {
     src: "/marketing-assets/product-proposal-review.png",
-    label: "Review the finished proposal",
+    label: "Review the proposal",
+    detail: "Check the draft.",
     position: "center top"
   },
   {
     src: "/marketing-assets/product-final-send-check.png",
-    label: "Check the send package before it goes out",
+    label: "Check the send",
+    detail: "Review the email too.",
     position: "top center"
   },
   {
     src: "/marketing-assets/product-success-complete.png",
-    label: "Send it and move to the next customer",
+    label: "Done",
+    detail: "Proposal made. File saved. Email sent.",
     position: "top center"
   }
 ];
@@ -120,7 +105,7 @@ export default function Home() {
           <p className="eyebrow">For busy contractor teams</p>
           <h1>Send proposals 10x faster without typing.</h1>
           <p className="hero-text">
-            Add the customer. Speak the job. Review it. Send it.
+            Add the customer. Say the job. Review it. Send it.
           </p>
           <div className="hero-actions">
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20AI%20Contractor%20System%20Demo">
@@ -130,7 +115,7 @@ export default function Home() {
               See Workflow
             </a>
           </div>
-          <p className="trust-line">Built for contractors who want faster quotes, not more software.</p>
+          <p className="trust-line">Built for busy contractors who want faster quotes, not more software.</p>
         </div>
 
         <div className="hero-visual">
@@ -152,7 +137,7 @@ export default function Home() {
       <section className="section section-grid" id="how-it-works">
         <div className="section-intro">
           <p className="eyebrow">How it works</p>
-          <h2>Name. Job. Review. Send.</h2>
+          <h2>Three simple steps.</h2>
           <p>The proposal gets ready while the job is still fresh.</p>
         </div>
         <div className="workflow-list">
@@ -168,8 +153,8 @@ export default function Home() {
 
       <section className="section section-grid">
         <div className="section-intro narrow">
-          <p className="eyebrow">Why it helps</p>
-          <h2>Faster quotes. Less chasing.</h2>
+          <p className="eyebrow">What you get</p>
+          <h2>Less admin. Faster follow-up.</h2>
         </div>
         <ul className="benefits-list">
           {benefits.map((benefit) => (
@@ -178,42 +163,43 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="section audience">
-        <div className="section-intro narrow">
-          <p className="eyebrow">Who it&apos;s for</p>
-          <h2>Built for owner-operators and small teams.</h2>
-          <p>If you sell jobs, walk sites, and still need to send proposals fast, this is for you.</p>
-        </div>
-      </section>
-
       <section className="section demo-strip" id="demo-strip">
         <div className="section-intro narrow">
           <p className="eyebrow">Quick demo</p>
           <h2>Real screens. Real flow.</h2>
         </div>
-        <div className="demo-hint" aria-label="Swipe hint">
-          <span className="demo-hint-chip">Swipe anywhere on the screens to follow the workflow</span>
+        <div className="demo-rail-header">
+          <div className="demo-hint">
+            <span className="demo-hint-chip">Swipe the screens</span>
+          </div>
+          <p className="demo-count">5 steps</p>
         </div>
-        <div className="demo-gallery">
-          {screenshots.map((shot) => (
-            <figure key={shot.label}>
-              <img src={shot.src} alt={shot.label} style={{ objectPosition: shot.position }} />
-              <figcaption>{shot.label}</figcaption>
-            </figure>
-          ))}
+        <div className="demo-scroller" aria-label="Voice-to-proposal screen walkthrough">
+          <div className="demo-gallery">
+            {screenshots.map((shot, index) => (
+              <figure key={shot.label}>
+                <div className="demo-step">{`Step ${index + 1}`}</div>
+                <img src={shot.src} alt={shot.label} style={{ objectPosition: shot.position }} />
+                <figcaption>
+                  <strong>{shot.label}</strong>
+                  <span>{shot.detail}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
         <div className="demo-cta">
           <div>
             <p className="eyebrow">See your version</p>
-            <h3>Want this set up for your workflow?</h3>
-            <p>Book a walkthrough and see how it would work for your jobs and your proposal style.</p>
+            <h3>Want this for your jobs?</h3>
+            <p>Book a walkthrough and see how it would work for your workflow.</p>
           </div>
           <div className="hero-actions">
             <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
               Book Demo
             </a>
-            <a className="button button-light" href="mailto:dave@prolynk.io?subject=Send%20Me%20More%20Details%20on%20AI%20Contractor%20System">
-              Email Questions
+            <a className="inline-link" href="#pricing">
+              See pricing
             </a>
           </div>
         </div>
@@ -235,29 +221,13 @@ export default function Home() {
             <p className="proof-note">
               You see the proposal and the email before anything goes out.
             </p>
-            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Show%20Me%20The%20Workflow%20Live">
-              See It Live
+            <a className="inline-link" href="mailto:dave@prolynk.io?subject=Show%20Me%20The%20Workflow%20Live">
+              See it live
             </a>
           </div>
           <div className="proof-shot">
             <img src="/marketing-assets/product-success-complete.png" alt="Completed send state showing proposal created, file saved, email sent, and next step complete" />
           </div>
-        </div>
-      </section>
-
-      <section className="section support-offers">
-        <div className="section-intro">
-          <p className="eyebrow">Ways to work together</p>
-          <h2>Start here. Add support later.</h2>
-          <p>The quoting workflow comes first. The other offers come after.</p>
-        </div>
-        <div className="offer-grid">
-          {offers.map((offer, index) => (
-            <article className={`offer-item ${index === 0 ? "offer-item-featured" : ""}`} key={offer.name}>
-              <h3>{offer.name}</h3>
-              <p>{offer.promise}</p>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -275,7 +245,7 @@ export default function Home() {
       <section className="section faq" id="faq">
         <div className="section-intro narrow">
           <p className="eyebrow">FAQ</p>
-          <h2>Common questions before the demo</h2>
+          <h2>Quick answers before the demo</h2>
         </div>
         <div className="faq-list">
           {faq.map((item) => (
@@ -293,9 +263,6 @@ export default function Home() {
         <div className="hero-actions">
           <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
             Book Demo
-          </a>
-          <a className="button button-light" href="#demo-strip">
-            See Workflow
           </a>
         </div>
       </section>

@@ -6,9 +6,9 @@
   --ink: #211d19;
   --muted: #655d54;
   --line: rgba(33, 29, 25, 0.12);
-  --accent: #567160;
-  --accent-soft: #7f9889;
-  --olive: #355845;
+  --accent: #b47a45;
+  --accent-soft: #d3a373;
+  --olive: #456d59;
   --shadow: 0 24px 60px rgba(43, 35, 28, 0.11);
 }
 
@@ -23,9 +23,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(127, 152, 137, 0.16), transparent 32%),
-    radial-gradient(circle at top right, rgba(53, 88, 69, 0.12), transparent 26%),
-    linear-gradient(180deg, #f7f3ec 0%, #f2ece4 50%, #faf7f2 100%);
+    radial-gradient(circle at top left, rgba(211, 163, 115, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(69, 109, 89, 0.12), transparent 26%),
+    linear-gradient(180deg, #f9f4ec 0%, #f3ece3 50%, #fbf7f1 100%);
   color: var(--ink);
   font-family: var(--font-sans), sans-serif;
 }
@@ -33,6 +33,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(180, 122, 69, 0.32);
+  outline-offset: 3px;
 }
 
 img {
@@ -91,10 +97,10 @@ img {
 .section-intro p,
 .workflow-item p,
 .benefits-list li,
-.offer-item p,
 .faq-list p,
 .trust-line,
-.before-after p {
+.demo-cta p,
+.proof-note {
   color: var(--muted);
   line-height: 1.6;
 }
@@ -153,9 +159,7 @@ img {
 .hero-copy h1,
 .section-intro h2,
 .final-cta h2,
-.before-after h3,
 .workflow-item h3,
-.offer-item h3,
 .faq-list h3 {
   margin: 0;
   font-family: var(--font-serif), serif;
@@ -189,7 +193,7 @@ img {
 
 .hero-visual {
   position: relative;
-  min-height: 620px;
+  min-height: 560px;
 }
 
 .phone-stage {
@@ -286,8 +290,7 @@ img {
 }
 
 .workflow-item,
-.faq-list article,
-.offer-item {
+.faq-list article {
   padding: 1.4rem 0 1.4rem 1.4rem;
   border-left: 1px solid var(--line);
 }
@@ -302,24 +305,13 @@ img {
 }
 
 .workflow-item h3,
-.offer-item h3,
-.faq-list h3,
-.before-after h3 {
+.faq-list h3 {
   font-size: 1.7rem;
-}
-
-.before-after {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  padding: 3rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 .benefits-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   padding: 0;
   margin: 0;
@@ -332,27 +324,25 @@ img {
   font-size: 1.05rem;
 }
 
-.audience {
-  padding-top: 3rem;
-}
-
 .demo-strip {
   padding-top: 4rem;
+}
+
+.demo-rail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.35rem;
 }
 
 .demo-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
-  margin-top: 2rem;
+  margin-top: 0.9rem;
   overscroll-behavior-x: contain;
   touch-action: pan-x;
-}
-
-.demo-hint {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 1.35rem;
 }
 
 .demo-hint-chip {
@@ -369,6 +359,28 @@ img {
   animation: demo-nudge 2.4s ease-in-out infinite;
 }
 
+.demo-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.demo-scroller {
+  position: relative;
+}
+
+.demo-scroller::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(251, 247, 241, 0), rgba(251, 247, 241, 0.96));
+  pointer-events: none;
+}
+
 .demo-gallery figure {
   margin: 0;
   padding: 1rem;
@@ -376,6 +388,15 @@ img {
   background: rgba(255, 251, 245, 0.72);
   border: 1px solid rgba(33, 29, 25, 0.08);
   box-shadow: var(--shadow);
+}
+
+.demo-step {
+  margin-bottom: 0.65rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .demo-gallery img {
@@ -389,8 +410,19 @@ img {
 
 .demo-gallery figcaption {
   margin-top: 0.8rem;
+  display: grid;
+  gap: 0.25rem;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.demo-gallery figcaption strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.demo-gallery figcaption span {
+  line-height: 1.5;
 }
 
 .demo-cta {
@@ -416,6 +448,11 @@ img {
   max-width: 38rem;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.inline-link {
+  color: var(--olive);
+  font-weight: 700;
 }
 
 .proof-strip {
@@ -468,28 +505,6 @@ img {
   box-shadow: var(--shadow);
 }
 
-.support-offers {
-  position: relative;
-}
-
-.offer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.4rem;
-  margin-top: 2rem;
-}
-
-.offer-item {
-  min-height: 180px;
-}
-
-.offer-item-featured {
-  background: rgba(255, 251, 245, 0.64);
-  border-radius: 1.4rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(159, 101, 64, 0.18);
-}
-
 .pricing {
   text-align: center;
 }
@@ -521,12 +536,10 @@ img {
   .topbar,
   .hero,
   .section-grid,
-  .before-after,
   .benefits-list,
   .demo-gallery,
   .proof-panel,
   .demo-cta,
-  .offer-grid,
   .faq-list {
     grid-template-columns: 1fr;
   }
@@ -552,7 +565,7 @@ img {
   }
 
   .hero-visual {
-    min-height: 540px;
+    min-height: 480px;
   }
 
   .phone-frame-front {
@@ -575,12 +588,24 @@ img {
   }
 
   .hero-visual {
-    min-height: 420px;
+    min-height: 360px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .demo-rail-header {
+    align-items: flex-start;
   }
 
   .demo-gallery {
     grid-auto-flow: column;
-    grid-auto-columns: minmax(62vw, 62vw);
+    grid-auto-columns: minmax(54vw, 54vw);
     grid-template-columns: none;
     overflow-x: auto;
     gap: 0.9rem;
@@ -588,6 +613,7 @@ img {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
   }
 
   .demo-gallery figure {
@@ -599,13 +625,9 @@ img {
     object-fit: contain;
   }
 
-  .demo-hint {
-    overflow: hidden;
-  }
-
   .demo-hint-chip {
     font-size: 0.84rem;
-    white-space: normal;
+    white-space: nowrap;
     animation: none;
   }
 
@@ -617,19 +639,21 @@ img {
     width: 100%;
   }
 
-  .demo-cta .button {
+  .demo-cta .button,
+  .pricing .button,
+  .final-cta .button {
     width: 100%;
   }
 
   .phone-frame-front {
-    width: 240px;
-    height: 400px;
+    width: 210px;
+    height: 350px;
   }
 
   .phone-frame-back {
     bottom: 0;
-    width: 200px;
-    height: 340px;
+    width: 170px;
+    height: 290px;
   }
 
   .section {
