@@ -170,6 +170,9 @@ export default function Home() {
         </div>
         <div className="demo-rail-header">
           <p className="demo-count">5 steps</p>
+          <p className="demo-swipe-hint" aria-hidden="true">
+            Swipe here
+          </p>
         </div>
         <div className="demo-scroller" aria-label="Voice-to-proposal screen walkthrough">
           <div className="demo-gallery">

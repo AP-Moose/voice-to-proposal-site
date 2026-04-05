@@ -352,6 +352,21 @@ img {
   font-weight: 700;
 }
 
+.demo-swipe-hint {
+  display: none;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(194, 101, 55, 0.12);
+  border: 1px solid rgba(194, 101, 55, 0.22);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 30px rgba(33, 29, 25, 0.08);
+}
+
 .demo-scroller {
   position: relative;
 }
@@ -586,7 +601,19 @@ img {
   }
 
   .demo-rail-header {
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .demo-swipe-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .demo-swipe-hint::after {
+    content: "->";
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
   }
 
   .demo-gallery {
