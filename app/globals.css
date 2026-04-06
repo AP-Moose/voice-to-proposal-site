@@ -157,6 +157,18 @@ img {
   margin-top: 1.1rem;
   min-height: 3rem;
   padding: 0.85rem 1.75rem;
+  transition: background-color 600ms ease, box-shadow 600ms ease, transform 180ms ease;
+}
+
+/* Glow fires after 75% of video watched */
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(69, 109, 89, 0); }
+  50%       { box-shadow: 0 0 0 10px rgba(69, 109, 89, 0.22), 0 8px 28px rgba(69, 109, 89, 0.3); }
+}
+
+.button-glow {
+  background: var(--olive);
+  animation: cta-glow 2.2s ease-in-out infinite;
 }
 
 /* 16:9 responsive embed — works for YouTube and Loom */
@@ -170,13 +182,23 @@ img {
   background: #111;
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe,
+.video-wrapper > div {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
 }
 
 /* ── STEPS ── */
