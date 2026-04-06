@@ -1,18 +1,11 @@
-// ─── CHANGES ──────────────────────────────────────────────────────────────────
-// • Step cards: removed flip mechanic — simple static cards now
-// • Page order: Demo video moved directly after hero (was below steps)
-// • Video: wired for YouTube embed (more reliable than Loom)
-//   → Set DEMO_VIDEO_ID below once you upload to YouTube (unlisted)
-// • BOOKING_URL: swap in your scheduling link
-// ──────────────────────────────────────────────────────────────────────────────
+import VideoWithCTA from "./components/VideoWithCTA";
 
 // ── YOUTUBE VIDEO ─────────────────────────────────────────────────────────────
 // 1. Record in Loom, download the MP4
-// 2. Upload to YouTube → Visibility: Unlisted
+// 2. Upload to YouTube, set Visibility: Unlisted
 // 3. Copy the video ID from: https://www.youtube.com/watch?v=VIDEO_ID_HERE
-// 4. Paste it below
+// 4. Paste it below — the CTA button glows after 75% of the video is watched
 const DEMO_VIDEO_ID = "YOUR_YOUTUBE_VIDEO_ID";
-const DEMO_EMBED_URL = `https://www.youtube.com/embed/${DEMO_VIDEO_ID}?rel=0&modestbranding=1`;
 // ──────────────────────────────────────────────────────────────────────────────
 
 // ── BOOKING LINK ──────────────────────────────────────────────────────────────
@@ -24,7 +17,7 @@ const steps = [
   {
     num: "01",
     title: "Add the customer",
-    body: "Name, email, and address — takes seconds."
+    body: "Name, email, and address. Takes seconds."
   },
   {
     num: "02",
@@ -33,7 +26,7 @@ const steps = [
   },
   {
     num: "03",
-    title: "Review & send",
+    title: "Review and send",
     body: "Check everything, then send with one tap."
   }
 ];
@@ -45,7 +38,7 @@ const values = [
   },
   {
     headline: "Look professional instantly",
-    body: "Clean, branded proposals every time — no templates to fiddle with."
+    body: "Clean, branded proposals every time. No templates to fiddle with."
   },
   {
     headline: "Win more jobs",
@@ -68,10 +61,10 @@ export default function Home() {
   return (
     <main className="site-shell">
 
-      {/* ── HERO + VIDEO (split layout, no nav) ─────────────────────────────
-          Mobile: headline, video, CTA stacked
+      {/* ── HERO + VIDEO ─────────────────────────────────────────────────────
+          Mobile: headline stacked above video, CTA below
           Desktop: copy left, video + CTA right
-          Replace DEMO_VIDEO_ID at the top of this file with your YouTube ID
+          VideoWithCTA tracks playback and glows the button at 75% watched
       ─────────────────────────────────────────────────────────────────────── */}
       <section className="hero-split">
         <div className="hero-copy">
@@ -82,21 +75,11 @@ export default function Home() {
           </p>
         </div>
         <div className="hero-video">
-          <div className="video-wrapper">
-            <iframe
-              src={DEMO_EMBED_URL}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="AI Contractor System — voice to proposal demo"
-            />
-          </div>
-          <a className="button button-dark hero-cta" href={BOOKING_URL}>
-            Book Your Walkthrough
-          </a>
+          <VideoWithCTA videoId={DEMO_VIDEO_ID} bookingUrl={BOOKING_URL} />
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── Simple static cards */}
+      {/* ── HOW IT WORKS ── */}
       <section className="section steps-section" id="how-it-works">
         <div className="section-intro centered-intro">
           <p className="eyebrow">How it works</p>
@@ -129,7 +112,7 @@ export default function Home() {
       <section className="section walkthrough-cta">
         <p className="eyebrow">Ready to see it for your jobs?</p>
         <h2>Book your walkthrough.</h2>
-        <p>Pricing and setup details happen on the call — no surprises.</p>
+        <p>Pricing and setup details happen on the call. No surprises.</p>
         <a className="button button-dark" href={BOOKING_URL}>
           Book Your Walkthrough
         </a>
@@ -153,7 +136,7 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className="site-footer">
-        <span>© {new Date().getFullYear()} ProLynk &mdash; AI Contractor System</span>
+        <span>© {new Date().getFullYear()} ProLynk</span>
         <a href="/privacy" className="footer-link">Privacy</a>
       </footer>
 
