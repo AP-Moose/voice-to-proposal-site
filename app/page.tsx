@@ -1,86 +1,77 @@
-const workflowSteps = [
+// ─── CHANGES FROM PREVIOUS VERSION ───────────────────────────────────────────
+// • Hero: new headline + subheadline, single CTA that scrolls to #demo
+// • Removed hero phone-frame visual (screenshots removed per requirement)
+// • Steps section: centered intro + 3-col card grid
+// • Added value proposition 3-column section (replaces old benefits list)
+// • Demo section: replaced screenshot gallery with Loom embed
+//   → Search for LOOM_VIDEO_ID below and swap in your real Loom share ID
+// • CTA: "Book Your Walkthrough" (update BOOKING_URL to your scheduling link)
+// • FAQ: trimmed to 2 items
+// • Added simple footer
+// • Removed: proof section, pricing section, pain strip, screenshot gallery
+// • Nav: removed proof/pricing links
+// ──────────────────────────────────────────────────────────────────────────────
+
+// ── LOOM VIDEO ────────────────────────────────────────────────────────────────
+// Replace YOUR_LOOM_VIDEO_ID with the ID from your Loom share URL.
+// Example: https://www.loom.com/share/abc123def456 → ID is "abc123def456"
+const LOOM_VIDEO_ID = "YOUR_LOOM_VIDEO_ID";
+// ──────────────────────────────────────────────────────────────────────────────
+
+// ── BOOKING LINK ──────────────────────────────────────────────────────────────
+// Replace with your Calendly / scheduling page URL
+const BOOKING_URL = "mailto:dave@prolynk.io?subject=Book%20Walkthrough%20for%20AI%20Contractor%20System";
+// ──────────────────────────────────────────────────────────────────────────────
+
+const steps = [
   {
+    num: "01",
     title: "Add the customer",
-    body: "Name, email, address."
+    body: "Name, email, and address — takes seconds."
   },
   {
+    num: "02",
     title: "Say the job",
-    body: "Speak it or type quick notes."
+    body: "Speak the scope out loud. AI builds the proposal."
   },
   {
-    title: "Review and send",
-    body: "Check it, then send it."
+    num: "03",
+    title: "Review & send",
+    body: "Check everything, then send with one tap."
   }
 ];
 
-const benefits = [
-  "Send quotes faster",
-  "Review before you send",
-  "Less typing"
-];
-
-const proofPoints = [
-  "Customer entered",
-  "Proposal created",
-  "Email sent",
-  "File saved"
+const values = [
+  {
+    headline: "Send proposals 10x faster",
+    body: "From site visit to sent proposal in under 60 seconds."
+  },
+  {
+    headline: "Look professional instantly",
+    body: "Clean, branded proposals every time — no templates to fiddle with."
+  },
+  {
+    headline: "Win more jobs",
+    body: "Fast follow-up signals reliability. Customers notice."
+  }
 ];
 
 const faq = [
   {
     question: "Do I need to be tech-savvy?",
-    answer: "No. You speak the job, review it, and send."
-  },
-  {
-    question: "Does this replace my current process?",
-    answer: "No. It gives you a faster way to build and send proposals."
+    answer: "No, you just speak the job, review, and send."
   },
   {
     question: "Can I review everything before it is sent?",
-    answer: "Yes. The proposal and email are both shown before anything goes out."
-  },
-  {
-    question: "Is this only for bigger teams?",
-    answer: "No. It is built for owner-operators and small teams."
-  }
-];
-
-const screenshots = [
-  {
-    src: "/marketing-assets/product-customer-details.png",
-    label: "Add the customer",
-    detail: "Name, email, address.",
-    position: "top center"
-  },
-  {
-    src: "/marketing-assets/product-scope-voice.png",
-    label: "Say the job",
-    detail: "Speak it or type it.",
-    position: "top center"
-  },
-  {
-    src: "/marketing-assets/product-proposal-review.png",
-    label: "Review the proposal",
-    detail: "Check the draft.",
-    position: "center top"
-  },
-  {
-    src: "/marketing-assets/product-final-send-check.png",
-    label: "Check the send",
-    detail: "Review the email too.",
-    position: "top center"
-  },
-  {
-    src: "/marketing-assets/product-success-complete.png",
-    label: "Done",
-    detail: "Proposal made. File saved. Email sent.",
-    position: "top center"
+    answer: "Yes, you see the proposal and email before anything goes out."
   }
 ];
 
 export default function Home() {
   return (
     <main className="site-shell">
+
+      {/* ── HEADER ── Removed proof/pricing nav links */}
       <header className="topbar">
         <div className="brand-lockup">
           <span className="brand-mark">ACS</span>
@@ -91,59 +82,36 @@ export default function Home() {
         </div>
         <nav className="topnav" aria-label="Primary">
           <a href="#how-it-works">How It Works</a>
-          <a href="#proof">Proof</a>
-          <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=AI%20Contractor%20System%20Demo">
+          <a className="button button-dark" href={BOOKING_URL}>
             Book Demo
           </a>
         </nav>
       </header>
 
-      <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">For busy contractor teams</p>
-          <h1>Send proposals 10x faster without typing.</h1>
-          <p className="hero-text">
-            Add the customer. Say the job. Review it. Send it.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20AI%20Contractor%20System%20Demo">
-              Book Demo
-            </a>
-            <a className="button button-light" href="#demo-strip">
-              See Workflow
-            </a>
-          </div>
-          <p className="trust-line">Built for busy contractors who want faster quotes, not more software.</p>
-        </div>
-
-        <div className="hero-visual">
-          <div className="phone-stage">
-            <div className="phone-frame phone-frame-front">
-              <img src="/marketing-assets/product-proposal-review.png" alt="Proposal review screen from the AI Contractor System" />
-            </div>
-            <div className="phone-frame phone-frame-back">
-              <img src="/marketing-assets/product-scope-voice.png" alt="Voice capture screen from the AI Contractor System" />
-            </div>
-          </div>
-        </div>
+      {/* ── HERO ── New headline / subheadline / single CTA scrolling to #demo */}
+      <section className="hero hero-centered">
+        <p className="eyebrow">For busy contractors</p>
+        <h1>Send professional job proposals in 60 seconds using your voice.</h1>
+        <p className="hero-subhead">
+          Close more jobs. No typing. No paperwork. No missed follow&#8209;ups.
+        </p>
+        {/* CTA scrolls to the Loom demo section below */}
+        <a className="button button-dark hero-cta" href="#demo">
+          Watch 2&#8209;minute demo
+        </a>
       </section>
 
-      <section className="pain-strip">
-        <p>Slow quotes. Late follow-up. Jobs slipping through the cracks.</p>
-      </section>
-
-      <section className="section section-grid" id="how-it-works">
-        <div className="section-intro">
+      {/* ── HOW IT WORKS ── 3 steps, minimal cards */}
+      <section className="section steps-section" id="how-it-works">
+        <div className="section-intro centered-intro">
           <p className="eyebrow">How it works</p>
           <h2>Three simple steps.</h2>
-          <p>The proposal gets ready while the job is still fresh.</p>
         </div>
-        <div className="workflow-list">
-          {workflowSteps.map((step, index) => (
-            <article className="workflow-item" key={step.title}>
-              <span>{`0${index + 1}`}</span>
+        <div className="steps-grid">
+          {steps.map((step) => (
+            <article className="step-card" key={step.num}>
+              <span className="step-num">{step.num}</span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
             </article>
@@ -151,105 +119,58 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section-grid">
-        <div className="section-intro narrow">
-          <p className="eyebrow">What you get</p>
-          <h2>Less admin. Faster follow-up.</h2>
-        </div>
-        <ul className="benefits-list">
-          {benefits.map((benefit) => (
-            <li key={benefit}>{benefit}</li>
+      {/* ── VALUE PROPOSITION ── 3-column summary */}
+      <section className="section value-section">
+        <div className="value-grid">
+          {values.map((v) => (
+            <div className="value-card" key={v.headline}>
+              <h3>{v.headline}</h3>
+              <p>{v.body}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section className="section demo-strip" id="demo-strip">
-        <div className="section-intro narrow">
-          <p className="eyebrow">Quick demo</p>
-          <h2>Real screens. Real flow.</h2>
-        </div>
-        <div className="demo-rail-header">
-          <p className="demo-count">5 steps</p>
-          <p className="demo-swipe-hint" aria-hidden="true">
-            Swipe here
+      {/* ── DEMO ── Loom embed (swap in LOOM_VIDEO_ID above) */}
+      <section className="section loom-section" id="demo">
+        <div className="section-intro centered-intro">
+          <p className="eyebrow">2-minute demo</p>
+          <h2>See it in action.</h2>
+          <p className="loom-caption">
+            Watch how a contractor sends a professional proposal in under 60 seconds — no typing required.
           </p>
         </div>
-        <div className="demo-scroller" aria-label="Voice-to-proposal screen walkthrough">
-          <div className="demo-gallery">
-            {screenshots.map((shot, index) => (
-              <figure key={shot.label}>
-                <div className="demo-step">{`Step ${index + 1}`}</div>
-                <img src={shot.src} alt={shot.label} style={{ objectPosition: shot.position }} />
-                <figcaption>
-                  <strong>{shot.label}</strong>
-                  <span>{shot.detail}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-        <div className="demo-cta">
-          <div>
-            <p className="eyebrow">See your version</p>
-            <h3>Want this for your jobs?</h3>
-            <p>Book a walkthrough and see how it would work for your workflow.</p>
-          </div>
-          <div className="hero-actions">
-            <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
-              Book Demo
-            </a>
-            <a className="inline-link" href="#pricing">
-              See pricing
-            </a>
-          </div>
+        <div className="loom-wrapper">
+          {/* Replace LOOM_VIDEO_ID at the top of this file with your actual Loom video ID */}
+          <iframe
+            src={`https://www.loom.com/embed/${LOOM_VIDEO_ID}`}
+            frameBorder={0}
+            allowFullScreen
+            title="AI Contractor System — voice to proposal demo"
+          />
         </div>
       </section>
 
-      <section className="section proof-strip" id="proof">
-        <div className="section-intro">
-          <p className="eyebrow">Proof</p>
-          <h2>It ends with a sent proposal.</h2>
-          <p>The proposal is created, saved, and sent.</p>
-        </div>
-        <div className="proof-panel">
-          <div className="proof-copy">
-            <ul className="proof-list">
-              {proofPoints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <p className="proof-note">
-              You see the proposal and the email before anything goes out.
-            </p>
-            <a className="inline-link" href="mailto:dave@prolynk.io?subject=Show%20Me%20The%20Workflow%20Live">
-              See it live
-            </a>
-          </div>
-          <div className="proof-shot">
-            <img src="/marketing-assets/product-success-complete.png" alt="Completed send state showing proposal created, file saved, email sent, and next step complete" />
-          </div>
-        </div>
+      {/* ── BOOK WALKTHROUGH CTA ── */}
+      <section className="section walkthrough-cta">
+        <p className="eyebrow">Ready to see it for your jobs?</p>
+        <h2>Book your walkthrough.</h2>
+        <p>Pricing and setup details happen on the call — no surprises.</p>
+        {/* Update BOOKING_URL at the top of this file */}
+        <a className="button button-dark" href={BOOKING_URL}>
+          Book Your Walkthrough
+        </a>
       </section>
 
-      <section className="section pricing" id="pricing">
-        <div className="section-intro narrow">
-          <p className="eyebrow">Pricing and walkthrough</p>
-          <h2>Book a walkthrough. Get pricing.</h2>
-          <p>This is a practical setup, not a bloated software package.</p>
-          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Pricing%20Request%20for%20AI%20Contractor%20System">
-            Request Pricing
-          </a>
-        </div>
-      </section>
-
-      <section className="section faq" id="faq">
-        <div className="section-intro narrow">
+      {/* ── FAQ ── Trimmed to 2 items */}
+      <section className="section faq-section" id="faq">
+        <div className="section-intro centered-intro">
           <p className="eyebrow">FAQ</p>
-          <h2>Quick answers before the demo</h2>
+          <h2>Quick answers.</h2>
         </div>
-        <div className="faq-list">
+        <div className="faq-grid">
           {faq.map((item) => (
-            <article key={item.question}>
+            <article className="faq-item" key={item.question}>
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
             </article>
@@ -257,15 +178,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section final-cta">
-        <p className="eyebrow">Final call</p>
-        <h2>If you can explain the job, you can send the proposal faster.</h2>
-        <div className="hero-actions">
-          <a className="button button-dark" href="mailto:dave@prolynk.io?subject=Book%20Demo%20for%20AI%20Contractor%20System">
-            Book Demo
-          </a>
-        </div>
-      </section>
+      {/* ── FOOTER ── Simple: company name + privacy link */}
+      <footer className="site-footer">
+        <span>© {new Date().getFullYear()} AI Contractor System &mdash; prolynk.io</span>
+        {/* Add your actual privacy policy URL when ready */}
+        <a href="/privacy" className="footer-link">Privacy</a>
+      </footer>
+
     </main>
   );
 }
