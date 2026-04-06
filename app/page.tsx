@@ -1,16 +1,11 @@
-// ─── CHANGES FROM PREVIOUS VERSION ───────────────────────────────────────────
-// • Hero: new headline + subheadline, single CTA that scrolls to #demo
-// • Removed hero phone-frame visual (screenshots removed per requirement)
-// • Steps section: centered intro + 3-col card grid
-// • Added value proposition 3-column section (replaces old benefits list)
-// • Demo section: replaced screenshot gallery with Loom embed
-//   → Search for LOOM_VIDEO_ID below and swap in your real Loom share ID
-// • CTA: "Book Your Walkthrough" (update BOOKING_URL to your scheduling link)
-// • FAQ: trimmed to 2 items
-// • Added simple footer
-// • Removed: proof section, pricing section, pain strip, screenshot gallery
-// • Nav: removed proof/pricing links
+// ─── CHANGES ──────────────────────────────────────────────────────────────────
+// • Steps: now use flip cards (tap to reveal product screenshot on back)
+// • Brand: ProLynk attribution in nav, olive accent on value cards + steps
+// • LOOM_VIDEO_ID constant at top — swap in your Loom share ID when ready
+// • BOOKING_URL constant at top — swap in your scheduling link
 // ──────────────────────────────────────────────────────────────────────────────
+
+import StepCard from "./components/StepCard";
 
 // ── LOOM VIDEO ────────────────────────────────────────────────────────────────
 // Replace YOUR_LOOM_VIDEO_ID with the ID from your Loom share URL.
@@ -20,6 +15,7 @@ const LOOM_VIDEO_ID = "YOUR_LOOM_VIDEO_ID";
 
 // ── BOOKING LINK ──────────────────────────────────────────────────────────────
 // Replace with your Calendly / scheduling page URL
+// Hint: links.booking.discovery in company-os/config/links.yml
 const BOOKING_URL = "mailto:dave@prolynk.io?subject=Book%20Walkthrough%20for%20AI%20Contractor%20System";
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -27,17 +23,23 @@ const steps = [
   {
     num: "01",
     title: "Add the customer",
-    body: "Name, email, and address — takes seconds."
+    body: "Name, email, and address — takes seconds.",
+    imgSrc: "/marketing-assets/product-customer-details.png",
+    imgAlt: "Customer details screen"
   },
   {
     num: "02",
     title: "Say the job",
-    body: "Speak the scope out loud. AI builds the proposal."
+    body: "Speak the scope out loud. AI builds the proposal.",
+    imgSrc: "/marketing-assets/product-scope-voice.png",
+    imgAlt: "Voice capture screen"
   },
   {
     num: "03",
     title: "Review & send",
-    body: "Check everything, then send with one tap."
+    body: "Check everything, then send with one tap.",
+    imgSrc: "/marketing-assets/product-proposal-review.png",
+    imgAlt: "Proposal review screen"
   }
 ];
 
@@ -71,13 +73,13 @@ export default function Home() {
   return (
     <main className="site-shell">
 
-      {/* ── HEADER ── Removed proof/pricing nav links */}
+      {/* ── HEADER ── ProLynk attribution added to brand note */}
       <header className="topbar">
         <div className="brand-lockup">
           <span className="brand-mark">ACS</span>
           <div>
             <p className="eyebrow">AI Contractor System</p>
-            <p className="brand-note">Practical quoting and follow-up for busy contractors</p>
+            <p className="brand-note">by <strong>ProLynk</strong> — practical quoting for busy contractors</p>
           </div>
         </div>
         <nav className="topnav" aria-label="Primary">
@@ -89,37 +91,40 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* ── HERO ── New headline / subheadline / single CTA scrolling to #demo */}
+      {/* ── HERO ── */}
       <section className="hero hero-centered">
         <p className="eyebrow">For busy contractors</p>
         <h1>Send professional job proposals in 60 seconds using your voice.</h1>
         <p className="hero-subhead">
           Close more jobs. No typing. No paperwork. No missed follow&#8209;ups.
         </p>
-        {/* CTA scrolls to the Loom demo section below */}
         <a className="button button-dark hero-cta" href="#demo">
           Watch 2&#8209;minute demo
         </a>
       </section>
 
-      {/* ── HOW IT WORKS ── 3 steps, minimal cards */}
+      {/* ── HOW IT WORKS ── Flip cards: front = step info, back = screenshot */}
       <section className="section steps-section" id="how-it-works">
         <div className="section-intro centered-intro">
           <p className="eyebrow">How it works</p>
           <h2>Three simple steps.</h2>
+          <p className="steps-hint">Tap any card to see the screen.</p>
         </div>
         <div className="steps-grid">
           {steps.map((step) => (
-            <article className="step-card" key={step.num}>
-              <span className="step-num">{step.num}</span>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
+            <StepCard
+              key={step.num}
+              num={step.num}
+              title={step.title}
+              body={step.body}
+              imgSrc={step.imgSrc}
+              imgAlt={step.imgAlt}
+            />
           ))}
         </div>
       </section>
 
-      {/* ── VALUE PROPOSITION ── 3-column summary */}
+      {/* ── VALUE PROPOSITION ── */}
       <section className="section value-section">
         <div className="value-grid">
           {values.map((v) => (
@@ -131,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── DEMO ── Loom embed (swap in LOOM_VIDEO_ID above) */}
+      {/* ── DEMO ── Loom embed */}
       <section className="section loom-section" id="demo">
         <div className="section-intro centered-intro">
           <p className="eyebrow">2-minute demo</p>
@@ -140,8 +145,8 @@ export default function Home() {
             Watch how a contractor sends a professional proposal in under 60 seconds — no typing required.
           </p>
         </div>
+        {/* Replace LOOM_VIDEO_ID at the top of this file with your Loom video ID */}
         <div className="loom-wrapper">
-          {/* Replace LOOM_VIDEO_ID at the top of this file with your actual Loom video ID */}
           <iframe
             src={`https://www.loom.com/embed/${LOOM_VIDEO_ID}`}
             frameBorder={0}
@@ -151,7 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── BOOK WALKTHROUGH CTA ── */}
+      {/* ── WALKTHROUGH CTA ── */}
       <section className="section walkthrough-cta">
         <p className="eyebrow">Ready to see it for your jobs?</p>
         <h2>Book your walkthrough.</h2>
@@ -162,7 +167,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* ── FAQ ── Trimmed to 2 items */}
+      {/* ── FAQ ── */}
       <section className="section faq-section" id="faq">
         <div className="section-intro centered-intro">
           <p className="eyebrow">FAQ</p>
@@ -178,10 +183,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOOTER ── Simple: company name + privacy link */}
+      {/* ── FOOTER ── */}
       <footer className="site-footer">
-        <span>© {new Date().getFullYear()} AI Contractor System &mdash; prolynk.io</span>
-        {/* Add your actual privacy policy URL when ready */}
+        <span>© {new Date().getFullYear()} ProLynk &mdash; AI Contractor System</span>
         <a href="/privacy" className="footer-link">Privacy</a>
       </footer>
 
