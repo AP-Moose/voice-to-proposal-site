@@ -68,53 +68,31 @@ export default function Home() {
   return (
     <main className="site-shell">
 
-      {/* ── HEADER ── */}
-      <header className="topbar">
-        <div className="brand-lockup">
-          <span className="brand-mark">ACS</span>
-          <div>
-            <p className="eyebrow">AI Contractor System</p>
-            <p className="brand-note">by <strong>ProLynk</strong> — practical quoting for busy contractors</p>
-          </div>
-        </div>
-        <nav className="topnav" aria-label="Primary">
-          <a href="#how-it-works">How It Works</a>
-          <a href="#faq">FAQ</a>
-          <a className="button button-dark" href={BOOKING_URL}>
-            Book Demo
-          </a>
-        </nav>
-      </header>
-
-      {/* ── HERO ── */}
-      <section className="hero-centered">
-        <p className="eyebrow">For busy contractors</p>
-        <h1>Send professional job proposals in 60 seconds using your voice.</h1>
-        <p className="hero-subhead">
-          Close more jobs. No typing. No paperwork. No missed follow&#8209;ups.
-        </p>
-        <a className="button button-dark hero-cta" href="#demo">
-          Watch 2&#8209;minute demo
-        </a>
-      </section>
-
-      {/* ── DEMO VIDEO ── Placed directly after hero for validation flow */}
-      {/* Replace DEMO_VIDEO_ID at the top of this file with your YouTube video ID */}
-      <section className="section demo-section" id="demo">
-        <div className="section-intro centered-intro">
-          <p className="eyebrow">2-minute demo</p>
-          <h2>See it in action.</h2>
-          <p className="demo-caption">
-            Watch how a contractor sends a professional proposal in under 60 seconds — no typing required.
+      {/* ── HERO + VIDEO (split layout, no nav) ─────────────────────────────
+          Mobile: headline, video, CTA stacked
+          Desktop: copy left, video + CTA right
+          Replace DEMO_VIDEO_ID at the top of this file with your YouTube ID
+      ─────────────────────────────────────────────────────────────────────── */}
+      <section className="hero-split">
+        <div className="hero-copy">
+          <p className="eyebrow">For busy contractors</p>
+          <h1>Professional proposals sent in 60 seconds from your voice.</h1>
+          <p className="hero-subhead">
+            Close more jobs. No typing. No paperwork.
           </p>
         </div>
-        <div className="video-wrapper">
-          <iframe
-            src={DEMO_EMBED_URL}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="AI Contractor System — voice to proposal demo"
-          />
+        <div className="hero-video">
+          <div className="video-wrapper">
+            <iframe
+              src={DEMO_EMBED_URL}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="AI Contractor System — voice to proposal demo"
+            />
+          </div>
+          <a className="button button-dark hero-cta" href={BOOKING_URL}>
+            Book Your Walkthrough
+          </a>
         </div>
       </section>
 
