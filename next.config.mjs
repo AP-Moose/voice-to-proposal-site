@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: "/sites/voice",
+  assetPrefix: "/sites/voice",
   outputFileTracingRoot: process.cwd(),
   images: {
     remotePatterns: [
