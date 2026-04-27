@@ -1,0 +1,13 @@
+
+> voice-proposal-app-site@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.14
+   - Local:        http://localhost:3004
+   - Network:      http://192.168.1.162:3004
+
+ ✓ Starting...
+ ✓ Ready in 1079ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled / in 45.4s (563 modules)
+ GET / 404 in 3320ms
