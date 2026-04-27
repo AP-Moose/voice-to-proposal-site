@@ -1,16 +1,14 @@
 import VideoWithCTA from "./components/VideoWithCTA";
 
 // ── YOUTUBE VIDEO ─────────────────────────────────────────────────────────────
-// 1. Record in Loom, download the MP4
-// 2. Upload to YouTube, set Visibility: Unlisted
-// 3. Copy the video ID from: https://www.youtube.com/watch?v=VIDEO_ID_HERE
-// 4. Paste it below — the CTA button glows after 75% of the video is watched
-const DEMO_VIDEO_ID = "YOUR_YOUTUBE_VIDEO_ID";
+// Upload renders/prolynk-v7.mp4 to YouTube → set Visibility: Unlisted
+// Copy the video ID from: https://www.youtube.com/watch?v=VIDEO_ID_HERE
+// The CTA button glows after 75% of the video is watched
+const DEMO_VIDEO_ID = "Qr8zn1W6aSw";
 // ──────────────────────────────────────────────────────────────────────────────
 
 // ── BOOKING LINK ──────────────────────────────────────────────────────────────
-// Replace with your Calendly / scheduling page URL
-const BOOKING_URL = "mailto:dave@prolynk.io?subject=Book%20Walkthrough%20for%20AI%20Contractor%20System";
+const BOOKING_URL = "mailto:dave@prolynk.io?subject=Book%20Walkthrough%20for%20ProLynk%20Bid";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const steps = [
@@ -33,8 +31,8 @@ const steps = [
 
 const values = [
   {
-    headline: "Send proposals 10x faster",
-    body: "From site visit to sent proposal in under 60 seconds."
+    headline: "Send proposals before you leave the job",
+    body: "From walkthrough to sent proposal in under 2 minutes."
   },
   {
     headline: "Look professional instantly",
@@ -68,10 +66,10 @@ export default function Home() {
       ─────────────────────────────────────────────────────────────────────── */}
       <section className="hero-split">
         <div className="hero-copy">
-          <p className="eyebrow">For busy contractors</p>
-          <h1>Professional proposals sent in 60 seconds from your voice.</h1>
+          <p className="eyebrow">ProLynk Bid — for contractors</p>
+          <h1>Send the proposal before you leave the driveway.</h1>
           <p className="hero-subhead">
-            Close more jobs. No typing. No paperwork.
+            Voice to proposal in under 2 minutes. No typing. No paperwork.
           </p>
         </div>
         <div className="hero-video">
@@ -110,9 +108,9 @@ export default function Home() {
 
       {/* ── BOOK WALKTHROUGH CTA ── */}
       <section className="section walkthrough-cta">
-        <p className="eyebrow">Ready to see it for your jobs?</p>
-        <h2>Book your walkthrough.</h2>
-        <p>Pricing and setup details happen on the call. No surprises.</p>
+        <p className="eyebrow">Stop losing jobs while you're still typing</p>
+        <h2>Try ProLynk Bid free.</h2>
+        <p>No contracts. Built for contractors.</p>
         <a className="button button-dark" href={BOOKING_URL}>
           Book Your Walkthrough
         </a>
