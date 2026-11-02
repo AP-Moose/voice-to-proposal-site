@@ -29,6 +29,25 @@ const steps = [
   }
 ];
 
+// ProLynk Grow: the same app turns each won job into a month of posts.
+const growSteps = [
+  {
+    num: "01",
+    title: "Film the job",
+    body: "Get a shot list for the job. Upload photos and video from your phone, and add a voice note."
+  },
+  {
+    num: "02",
+    title: "Get a month of posts",
+    body: "One job becomes a long video, short reels, before/after posts and captions, all in your voice and checked against your Brand Brain."
+  },
+  {
+    num: "03",
+    title: "Approve from one link",
+    body: "Swipe through the posts on your phone. Nothing posts until you tap Approve."
+  }
+];
+
 const values = [
   {
     headline: "Send proposals before you leave the job",
@@ -52,6 +71,14 @@ const faq = [
   {
     question: "Can I review everything before it is sent?",
     answer: "Yes, you see the proposal and email before anything goes out."
+  },
+  {
+    question: "Where do my photos and videos go?",
+    answer: "Into your own Google Drive, in a folder for each job. You keep everything."
+  },
+  {
+    question: "Does it post for me?",
+    answer: "You approve every post first. Approved posts come ready to post: the video, caption and first comment."
   }
 ];
 
@@ -85,6 +112,26 @@ export default function Home() {
         </div>
         <div className="steps-grid">
           {steps.map((step) => (
+            <article className="step-card" key={step.num}>
+              <span className="step-num">{step.num}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ── GROW: JOB → CONTENT ── */}
+      <section className="section steps-section" id="grow">
+        <div className="section-intro centered-intro">
+          <p className="eyebrow">ProLynk Grow</p>
+          <h2>Won the job? Turn it into content.</h2>
+          <p className="hero-subhead">
+            Real job footage, built for Facebook and Instagram search and Reels. No AI-faked photos.
+          </p>
+        </div>
+        <div className="steps-grid">
+          {growSteps.map((step) => (
             <article className="step-card" key={step.num}>
               <span className="step-num">{step.num}</span>
               <h3>{step.title}</h3>
