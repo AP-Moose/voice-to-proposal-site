@@ -1,5 +1,19 @@
 import VideoWithCTA from "./components/VideoWithCTA";
 
+// ── APP LINK ──────────────────────────────────────────────────────────────────
+// The installable app's "download" page. utm_source=site tells signups apart from ads.
+const APP_BASE_URL = "https://try.prolynk.io";
+const GET_APP_URL = `${APP_BASE_URL}/get?utm_source=site`;
+// ──────────────────────────────────────────────────────────────────────────────
+
+const appButtonStyle = {
+  marginTop: "1.25rem",
+  gap: "0.5rem",
+  background: "#6366FF",
+  color: "#fff",
+  boxShadow: "0 10px 24px -12px rgba(99, 102, 255, 0.8)"
+} as const;
+
 // ── YOUTUBE VIDEO ─────────────────────────────────────────────────────────────
 // Upload renders/prolynk-v7.mp4 to YouTube → set Visibility: Unlisted
 // Copy the video ID from: https://www.youtube.com/watch?v=VIDEO_ID_HERE
@@ -98,6 +112,14 @@ export default function Home() {
           <p className="hero-subhead">
             Voice to proposal in under 2 minutes. No typing. No paperwork.
           </p>
+          <a
+            className="button"
+            href={`${GET_APP_URL}&utm_content=hero`}
+            style={appButtonStyle}
+          >
+            <img src="/icon-192.png" alt="" width={22} height={22} style={{ borderRadius: 6, background: "#fff" }} />
+            Get the app
+          </a>
         </div>
         <div className="hero-video">
           <VideoWithCTA videoId={DEMO_VIDEO_ID} bookingUrl={BOOKING_URL} />
@@ -158,9 +180,18 @@ export default function Home() {
         <p className="eyebrow">Stop losing jobs while you're still typing</p>
         <h2>Try ProLynk Bid free.</h2>
         <p>No contracts. Built for contractors.</p>
-        <a className="button button-dark" href={BOOKING_URL}>
-          Book Your Walkthrough
-        </a>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "center" }}>
+          <a
+            className="button"
+            href={`${GET_APP_URL}&utm_content=walkthrough`}
+            style={{ ...appButtonStyle, marginTop: 0 }}
+          >
+            Get the app
+          </a>
+          <a className="button button-dark" href={BOOKING_URL}>
+            Book Your Walkthrough
+          </a>
+        </div>
       </section>
 
       {/* ── FAQ ── */}

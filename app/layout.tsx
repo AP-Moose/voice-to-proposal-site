@@ -13,9 +13,30 @@ const spectral = Spectral({
   weight: ["400", "500", "600", "700"]
 });
 
+// Absolute base for og:image. Set NEXT_PUBLIC_SITE_URL at build time if the site lives elsewhere.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://prolynk.io";
+const SHARE_TITLE = "ProLynk: Bid + Grow for contractors";
+const SHARE_DESCRIPTION =
+  "Say the job and the proposal is sent. Turn each job you win into a month of real-footage posts you approve from one link.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "AI Contractor System",
-  description: "Send proposals 10x faster and close more jobs without typing."
+  description: "Send proposals 10x faster and close more jobs without typing.",
+  openGraph: {
+    type: "website",
+    siteName: "ProLynk",
+    title: SHARE_TITLE,
+    description: SHARE_DESCRIPTION,
+    url: "/",
+    images: [{ url: "/og.png", width: 1200, height: 675, alt: "ProLynk app: voice-to-proposal and job-to-content" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SHARE_TITLE,
+    description: SHARE_DESCRIPTION,
+    images: ["/og.png"]
+  }
 };
 
 export default function RootLayout({
